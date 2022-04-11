@@ -12,6 +12,7 @@ const table = document.querySelector('#pixelCanvas');
 const submit = document.querySelector('#submit');
 submit.addEventListener('click', function(e) {
     e.preventDefault();
+    reset();
     makeGrid();
 })
 
@@ -40,4 +41,10 @@ function makeGrid() {
 
     }
     return grid()
+}
+
+function reset() {
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
 }
